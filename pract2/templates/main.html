@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+   <title>RPi Web Server</title>
+<body>
+   <h1>RPi Web Server</h1>
+   {% for pin in pins %}
+   <p>
+   {{ pins[pin].name }}
+   {% if pins[pin].state == true %}
+      is currently <strong>on</strong>
+      <a href="/{{pin}}/off">Turn off</a>
+   {% else %}
+      is currently <strong>off</strong>
+      <a href="/{{pin}}/on">Turn on</a>
+   {% endif %}
+   </p>
+   {% endfor %}
+</body>
+</html>
